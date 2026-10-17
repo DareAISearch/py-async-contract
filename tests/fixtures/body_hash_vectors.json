@@ -1,0 +1,86 @@
+[
+  {
+    "name": "llm-gateway submit body",
+    "json": "{\"project\": \"web_scraping_service\", \"prompt_name\": \"check_blocked\", \"prompt_params\": {\"screenshot_url\": \"https://cdn.example.com/s.png\"}, \"webhook_url\": \"https://scraper.example.com/v1/webhook\", \"webhook_aud\": \"web-scraping-service\"}",
+    "canonical": "{\"project\":\"web_scraping_service\",\"prompt_name\":\"check_blocked\",\"prompt_params\":{\"screenshot_url\":\"https://cdn.example.com/s.png\"},\"webhook_aud\":\"web-scraping-service\",\"webhook_url\":\"https://scraper.example.com/v1/webhook\"}",
+    "sha256": "d81b099ce77de86f72d5a563f9935c1d62b38c133dfd7ee9a8063ee13f7ead03"
+  },
+  {
+    "name": "key order and whitespace don't matter",
+    "json": "{ \"b\" : 1 ,\n \"a\" : [ 1 , 2 ] }",
+    "canonical": "{\"a\":[1,2],\"b\":1}",
+    "sha256": "94a786c3662bc7beeb598efa7d8cb58d7bea25d6c275ea9785a0230ff1f8c2ba"
+  },
+  {
+    "name": "nested objects sorted at every level",
+    "json": "{\"z\": {\"y\": 1, \"x\": {\"w\": true, \"v\": false}}, \"a\": null}",
+    "canonical": "{\"a\":null,\"z\":{\"x\":{\"v\":false,\"w\":true},\"y\":1}}",
+    "sha256": "a0c24d13bd3bf59e40a375ccee772dad2db538e31c9cc7e513998af49bc5f71e"
+  },
+  {
+    "name": "empty containers",
+    "json": "{\"o\": {}, \"l\": [], \"s\": \"\"}",
+    "canonical": "{\"l\":[],\"o\":{},\"s\":\"\"}",
+    "sha256": "5e4fa172ee0393faff0de8bef28f78089d7afd9a089c54b4402318d087cc2a50"
+  },
+  {
+    "name": "array order is preserved",
+    "json": "[3, 1, 2]",
+    "canonical": "[3,1,2]",
+    "sha256": "51bda7ab4e44726cde71fcb6e4b515357059bb6b6dd5146d1fc50f73f11678c6"
+  },
+  {
+    "name": "integral floats print as integers",
+    "json": "[1.0, -0.0, 100.0, 1e2]",
+    "canonical": "[1,0,100,100]",
+    "sha256": "2baff83bf876f1e8857eda031538559f588e1eb356f7690474d915ab2df6355c"
+  },
+  {
+    "name": "ECMAScript exponent thresholds",
+    "json": "[1e20, 1e21, 1e-6, 1e-7, 123e-20, 2.5e-7]",
+    "canonical": "[100000000000000000000,1e+21,0.000001,1e-7,1.23e-18,2.5e-7]",
+    "sha256": "419d4f0c1a328c1074c32689b00aa84617c0fa749c03950ce8d8294f40ddd814"
+  },
+  {
+    "name": "shortest round-trip digits",
+    "json": "[0.30000000000000004, 123456.789, 4.35, 5e-324, 1.7976931348623157e308]",
+    "canonical": "[0.30000000000000004,123456.789,4.35,5e-324,1.7976931348623157e+308]",
+    "sha256": "a5ff9cc647d9bf64a10dd20a3b4e8d855b01c2af8cef0035fe6a7507d0b40ccd"
+  },
+  {
+    "name": "integers beyond 2^53 lose precision like JavaScript",
+    "json": "[9007199254740991, 9007199254740993, 123456789012345678901234]",
+    "canonical": "[9007199254740991,9007199254740992,1.2345678901234569e+23]",
+    "sha256": "cc70f491bf07581869e5869773a4c88e892e3609d0f0081b4d19899a47e39599"
+  },
+  {
+    "name": "non-ASCII is emitted raw, not escaped",
+    "json": "{\"name\": \"Ünïcödé ✓ 日本 😀\"}",
+    "canonical": "{\"name\":\"Ünïcödé ✓ 日本 😀\"}",
+    "sha256": "1fcf2fde6b678a2fa78fcdce7600398d46f21ee094ab874b4323b19664823c78"
+  },
+  {
+    "name": "control characters and quotes are escaped",
+    "json": "\"tab\\t nl\\n cr\\r bs\\b ff\\f nul\\u0000 us\\u001f del\\u007f quote\\\" backslash\\\\ slash\\/\"",
+    "canonical": "\"tab\\t nl\\n cr\\r bs\\b ff\\f nul\\u0000 us\\u001f del quote\\\" backslash\\\\ slash/\"",
+    "sha256": "018679dd1ac6163b1da2284a1e8427a049a01b2a9015e2ccb5fd17d6c7a07b14"
+  },
+  {
+    "name": "lone surrogate is escaped",
+    "json": "\"\\ud800 alone\"",
+    "canonical": "\"\\ud800 alone\"",
+    "sha256": "95d5d706b4764f2b1a675a39530c7bb9dde7abf657acaa4b80d1f11a39fba43b"
+  },
+  {
+    "name": "keys sort by UTF-16 code units, not code points",
+    "json": "{\"￿\": 1, \"😀\": 2, \"a\": 3, \"é\": 4}",
+    "canonical": "{\"a\":3,\"é\":4,\"😀\":2,\"￿\":1}",
+    "sha256": "2925431dbb8f8d942aac92bde501e96459c1eeddf0a6b7e839113926320b2477"
+  },
+  {
+    "name": "top-level scalars",
+    "json": "[null, true, false, \"x\", 0]",
+    "canonical": "[null,true,false,\"x\",0]",
+    "sha256": "e35807424106dfa3d9523ee686812788030898ab51a9cf9e5ace80ad05c30fa1"
+  }
+]
