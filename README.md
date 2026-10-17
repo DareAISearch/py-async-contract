@@ -28,17 +28,17 @@ headers and identical body hashes.
 
 ## Installing
 
-Not on PyPI yet — install straight from this GitHub repo. Requires Python 3.11+.
+Not on PyPI yet — install straight from this GitHub repo. Requires Python 3.14+.
 
 ```bash
-pip install "py-async-contract @ git+https://github.com/DareAISearch/py-async-contract.git@v0.1.0"
+pip install "py-async-contract @ git+https://github.com/DareAISearch/py-async-contract.git@v0.1.1"
 ```
 
 or in `pyproject.toml`:
 
 ```toml
 dependencies = [
-    "py-async-contract @ git+https://github.com/DareAISearch/py-async-contract.git@v0.1.0",
+    "py-async-contract @ git+https://github.com/DareAISearch/py-async-contract.git@v0.1.1",
 ]
 ```
 
