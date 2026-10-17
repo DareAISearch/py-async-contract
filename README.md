@@ -77,8 +77,8 @@ Keys are scoped to the caller (its auth token's `sub`). The callee compares bodi
 | `Webhook-Timestamp` | Unix seconds when this attempt was sent. New on every retry. |
 | `Authorization` | `Bearer <M2M token>`. |
 
-Headers are authoritative; repeat the ids in the body only for logs. What the receiver's response
-means:
+The ids travel **only** in these headers; don't repeat them in the body, so there's a single
+source of truth. The body carries just the job's outcome. What the receiver's response means:
 
 | Response | Outcome |
 | --- | --- |
