@@ -1,9 +1,9 @@
 [
   {
     "name": "llm-gateway submit body",
-    "json": "{\"project\": \"web_scraping_service\", \"prompt_name\": \"check_blocked\", \"prompt_params\": {\"screenshot_url\": \"https://cdn.example.com/s.png\"}, \"webhook_url\": \"https://scraper.example.com/v1/webhook\", \"webhook_aud\": \"web-scraping-service\"}",
-    "canonical": "{\"project\":\"web_scraping_service\",\"prompt_name\":\"check_blocked\",\"prompt_params\":{\"screenshot_url\":\"https://cdn.example.com/s.png\"},\"webhook_aud\":\"web-scraping-service\",\"webhook_url\":\"https://scraper.example.com/v1/webhook\"}",
-    "sha256": "d81b099ce77de86f72d5a563f9935c1d62b38c133dfd7ee9a8063ee13f7ead03"
+    "json": "{\"project\": \"web_data_engine\", \"prompt_name\": \"check_blocked\", \"prompt_params\": {\"screenshot_url\": \"https://cdn.example.com/s.png\"}, \"webhook_url\": \"https://scraper.example.com/v1/webhook\", \"webhook_aud\": \"web-data-engine\"}",
+    "canonical": "{\"project\":\"web_data_engine\",\"prompt_name\":\"check_blocked\",\"prompt_params\":{\"screenshot_url\":\"https://cdn.example.com/s.png\"},\"webhook_aud\":\"web-data-engine\",\"webhook_url\":\"https://scraper.example.com/v1/webhook\"}",
+    "sha256": "523cb4441470bedfe2b4ccf53d08ec6b851c4bdd7ad0dfd651a2b553d248b882"
   },
   {
     "name": "key order and whitespace don't matter",

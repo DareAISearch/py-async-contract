@@ -15,9 +15,9 @@ from py_async_contract import body_hash, canonical_json
 INPUTS = [
     (
         "llm-gateway submit body",
-        r'{"project": "web_scraping_service", "prompt_name": "check_blocked", '
+        r'{"project": "web_data_engine", "prompt_name": "check_blocked", '
         r'"prompt_params": {"screenshot_url": "https://cdn.example.com/s.png"}, '
-        r'"webhook_url": "https://scraper.example.com/v1/webhook", "webhook_aud": "web-scraping-service"}',
+        r'"webhook_url": "https://scraper.example.com/v1/webhook", "webhook_aud": "web-data-engine"}',
     ),
     ("key order and whitespace don't matter", '{ "b" : 1 ,\n "a" : [ 1 , 2 ] }'),
     ("nested objects sorted at every level", r'{"z": {"y": 1, "x": {"w": true, "v": false}}, "a": null}'),
